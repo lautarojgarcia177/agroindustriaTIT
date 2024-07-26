@@ -175,12 +175,14 @@ const preloadedImages = imagesUrls.map((url) => {
 document.addEventListener("DOMContentLoaded", function () {
   var introElement = document.getElementById("intro");
   let currentIndex = 0;
-  setInterval(() => {
-    if (currentIndex === imagesUrls.length - 1) {
-      currentIndex = 0;
-    } else {
-      currentIndex++;
-    }
-    introElement.style.backgroundImage = `url('${imagesUrls[currentIndex]}')`;
-  }, 3500);
+  setTimeout(() => {
+    setInterval(() => {
+      if (currentIndex === imagesUrls.length - 1) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
+      introElement.style.backgroundImage = `url('${imagesUrls[currentIndex]}')`;
+    }, 3500);
+  }, 1000);
 });
